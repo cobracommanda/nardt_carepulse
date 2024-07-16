@@ -2,7 +2,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
 import { Form } from "@/components/ui/form";
 import CustomFormField from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
@@ -33,21 +32,6 @@ const PatientForm = () => {
     },
   });
 
-  // function onSubmit({
-  //   name,
-  //   email,
-  //   phone,
-  // }: z.infer<typeof UserFormValidation>) {
-  //   setIsLoading(true)
-
-  //   try {
-
-  //   } catch (error) {
-
-  //   }
-  //   console.log(name, email, phone);
-  // }
-
   async function onSubmit({
     name,
     email,
@@ -69,7 +53,7 @@ const PatientForm = () => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <section className="mb-12 space-y-4">
-          <h1 className="header">Cheers 🥃</h1>
+          <h1 className="header">Hello 🧑🏾‍⚕️</h1>
           <p className="text-dark-700 ">Schedule your first appoinment</p>
         </section>
         <CustomFormField

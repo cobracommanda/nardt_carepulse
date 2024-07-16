@@ -12,7 +12,8 @@ import {
   storage,
   users,
 } from "../appwrite.config";
-// import { parseStringify } from "../utils";
+import { parseStringify } from "../utils";
+
 export const createUser = async (user: CreateUserParams) => {
   try {
     // Create new user -> https://appwrite.io/docs/references/1.5.x/server-nodejs/users#create
@@ -35,5 +36,15 @@ export const createUser = async (user: CreateUserParams) => {
       return existingUser.users[0];
     }
     console.error("An error occurred while creating a new user:", error);
+  }
+};
+
+export const getUser = async (userId: string) => {
+  try {
+    const user = await users.get(userId);
+
+    return parseStringify(user);
+  } catch (error) {
+    console.log(error);
   }
 };
